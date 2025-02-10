@@ -1,89 +1,111 @@
 <!DOCTYPE html>
 <html>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 24px;
-    }
-    h1 {
-      font-size: 48px;
-      padding: 12px 0;
-    }
-    h2 {
-      font-size: 36px;
-    }
-    h3 {
-      font-size: 24px;
-      padding: 24px 0;
-    }
-    p {
-      padding: 4px 0;
-    }
-    li {
-      line-height: 24px;
-    }
-    h1, h2, h3, p {
-      color: #11151C;
-      margin: 0;
-    }
-    .maincontent {
-      background-color: #DDDDDD;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      padding: 16px;
-      word-wrap: break-word;
-    }
-    .maincontent_p1 {
-      text-align: center;
-    }
-    .maincontent > a {
-      color: blue;
-      text-align: center;
-      text-decoration: underline;
-    }
-    .maincontent > .codep {
-      margin-bottom: 16px;
-    }
-    .maincontent > video {
-      background-color: #11151C;
-      border-radius: 8px;
-    }
-    .maincode {
-      background-color: #CCCCCC;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      font-family: Monospace, Monospace;
-      font-size: 14px;
-      padding: 16px;
-    }
-    .maincode > p > .shouldbeblue {
-      color: #0033B3;
-    }
-    .maincode > p > .shouldbegreen {
-      color: #067D17;
-    }
-    .maincode > p > .shouldbeviolet {
-      color: #871094;
-    }
-    .maincode > p > .shouldbevioletanditalic {
-      color: #871094;
-      font-style: italic;
-    }
-    .maincode > p > .shouldbeitalic {
-      font-style: italic;
-    }
-    .withlink {
-      align-items: center;
-      display: flex;
-      gap: 16px;
-    }
-  </style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What and How</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="resources/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="resources/icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="resources/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="resources/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="resources/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="resources/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="resources/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="resources/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="resources/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="resources/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="resources/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/icon/favicon-16x16.png">
+    <link rel="manifest" href="resources/icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="resources/icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 24px;
+      }
+      h1 {
+        font-size: 48px;
+        padding: 12px 0;
+      }
+      h2 {
+        font-size: 36px;
+      }
+      h3 {
+        font-size: 24px;
+        padding: 24px 0;
+      }
+      p {
+        padding: 4px 0;
+      }
+      li {
+        line-height: 24px;
+      }
+      h1, h2, h3, p {
+        color: #11151C;
+        margin: 0;
+      }
+      .maincontent {
+        background-color: #DDDDDD;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        word-wrap: break-word;
+      }
+      .maincontent_p1 {
+        text-align: center;
+      }
+      .maincontent > a {
+        color: blue;
+        text-align: center;
+        text-decoration: underline;
+      }
+      .maincontent > .codep {
+        margin-bottom: 16px;
+      }
+      .maincontent > video {
+        background-color: #11151C;
+        border-radius: 8px;
+      }
+      .maincode {
+        background-color: #CCCCCC;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        font-family: Monospace, Monospace;
+        font-size: 14px;
+        padding: 16px;
+      }
+      .maincode > p > .shouldbeblue {
+        color: #0033B3;
+      }
+      .maincode > p > .shouldbegreen {
+        color: #067D17;
+      }
+      .maincode > p > .shouldbeviolet {
+        color: #871094;
+      }
+      .maincode > p > .shouldbevioletanditalic {
+        color: #871094;
+        font-style: italic;
+      }
+      .maincode > p > .shouldbeitalic {
+        font-style: italic;
+      }
+      .withlink {
+        align-items: center;
+        display: flex;
+        gap: 16px;
+      }
+    </style>
+  </head>
   <body>
     <h1>What and How​</h1>
     <h2>Table of contents</h2>
