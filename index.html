@@ -1,7 +1,111 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 24px;
+    }
+    h1, h2, h3, p {
+      color: #11151C;
+      margin: 0;
+      padding: 8px 0;
+    }
+    .maincontent {
+      background-color: #DDDDDD;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      word-wrap: break-word;
+    }
+    .maincontent_p1 {
+      text-align: center;
+    }
+    .maincontent > a {
+      color: blue;
+      text-align: center;
+      text-decoration: underline;
+    }
+    .maincontent > .codep {
+      margin-bottom: 16px;
+    }
+    .maincontent > video {
+      background-color: #11151C;
+      border-radius: 8px;
+    }
+    .maincode {
+      background-color: #CCCCCC;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      font-family: Monospace, Monospace;
+      font-size: 14px;
+      padding: 16px;
+    }
+    .maincode > p > .shouldbeblue {
+      color: #0033B3;
+    }
+    .maincode > p > .shouldbegreen {
+      color: #067D17;
+    }
+    .maincode > p > .shouldbeviolet {
+      color: #871094;
+    }
+    .maincode > p > .shouldbevioletanditalic {
+      color: #871094;
+      font-style: italic;
+    }
+    .maincode > p > .shouldbeitalic {
+      font-style: italic;
+    }
+    .withlink {
+      align-items: center;
+      display: flex;
+      gap: 16px;
+    }
+  </style>
   <body>
     <h1>What and How​</h1>
-    <h2>Android Studio​</h2>
+    <div class="withlink">
+      <h2>Android Studio​</h2>
+      <div id="Android-Studio" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio')">
+      </div>
+    </div>
+    <div class="withlink">
+      <h3>AlertDialog</h3>
+      <div id="Android-Studio_AlertDialog" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_AlertDialog')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p class="maincontent_p1">From the Android Studio documentation:</p>
+      <a href="https://developer.android.com/develop/ui/views/components/dialogs">https://developer.android.com/develop/ui/views/components/dialogs</a>
+      <br>
+      <p>A dialog is a small window that prompts the user to make a decision or enter additional information.</p>
+      <p>A dialog doesn't fill the screen and is normally used for modal events that require users to take an action before they can proceed.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+        <p>AlertDialog.Builder builder = <span class="shouldbeblue">new</span> AlertDialog.Builder(<span class="shouldbeblue">this</span>);</p>
+        <p>builder.setTitle(<span class="shouldbegreen">"Sample title"</span>);</p>
+        <p>builder.setMessage(<span class="shouldbegreen">"Sample text"</span>);</p>
+        <p>builder.setPositiveButton(<span class="shouldbegreen">"Done"</span>, (dialog, which) -> dialog.dismiss());</p>
+        <br>
+        <p>AlertDialog alertDialog = builder.create();</p>
+        <p>alertDialog.show();</p>
+      </div>
+      <br>
+      <p class="codep">See preview below:</p>
+      <video height="500" controls>
+        <source src="resources/videos/alertdialogpreview.webm" type="video/webm">
+      </video>
+    </div>
   </body>
+  <script>
+    function link(linkstr){
+      navigator.clipboard.writeText(linkstr);
+    }
+  </script>
 </html>
