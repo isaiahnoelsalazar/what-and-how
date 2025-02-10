@@ -102,6 +102,89 @@
         <source src="resources/videos/alertdialogpreview.webm" type="video/webm">
       </video>
     </div>
+    <div class="withlink">
+      <h3>Notification</h3>
+      <div id="Android-Studio_Notification" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_Notification')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p class="maincontent_p1">From the Android Studio documentation:</p>
+      <a href="https://developer.android.com/develop/ui/views/notifications/build-notification">https://developer.android.com/develop/ui/views/notifications/build-notification</a>
+      <br>
+      <p>Notifications provide short, timely information about events in your app while it isn't in use.</p>
+      <br>
+      <p>See sample code below:</p>
+      <p class="codep">For Android 13+:</p>
+      <div class="maincode">
+        <p>if (ActivityCompat.<span class="shouldbeitalic">checkSelfPermission</span>(<span class="shouldbeblue">this</span>, android.Manifest.permission.<span class="shouldbevioletanditalic">POST_NOTIFICATIONS</span>) != PackageManager.<span class="shouldbevioletanditalic">PERMISSION_GRANTED</span>){</p>
+        <p>&nbsp;&nbsp;ActivityCompat.<span class="shouldbeitalic">requestPermissions</span>(<span class="shouldbeblue">this</span>, <span class="shouldbeblue">new</span> String[] { android.Manifest.permission.<span class="shouldbevioletanditalic">POST_NOTIFICATIONS</span> }, <span class="shouldbeblue">0</span>);</p>
+        <p>} else {</p>
+        <p>&nbsp;&nbsp;NotificationChannel channel = new NotificationChannel(String.valueOf(<span class="shouldbeblue">1</span>), <span class="shouldbegreen">"Notification"</span>, NotificationManager.<span class="shouldbevioletanditalic">IMPORTANCE_DEFAULT</span>);</p>
+        <p>&nbsp;&nbsp;NotificationManager notificationManager = (NotificationManager) getSystemService(<span class="shouldbevioletanditalic">NOTIFICATION_SERVICE</span>);</p>
+        <p>&nbsp;&nbsp;notificationManager.createNotificationChannel(channel);</p>
+        <p>&nbsp;&nbsp;Notification notification = <span class="shouldbeblue">new</span> Notification.Builder(<span class="shouldbeblue">this</span>, String.valueOf(<span class="shouldbeblue">1</span>))</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;.setSmallIcon(R.drawable.<span class="shouldbevioletanditalic">notification_icon</span>)</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;.setContentTitle(<span class="shouldbegreen">"Sample title"</span>)</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;.setContentText(<span class="shouldbegreen">"Sample text"</span>)</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;.build();</p>
+        <p>&nbsp;&nbsp;notificationManager.notify(<span class="shouldbeblue">1</span>, notification);</p>
+        <p>}</p>
+      </div>
+      <br>
+      <p class="codep">For Android 8.0+:</p>
+      <div class="maincode">
+        <p>NotificationChannel channel = new NotificationChannel(String.valueOf(<span class="shouldbeblue">1</span>), <span class="shouldbegreen">"Notification"</span>, NotificationManager.<span class="shouldbevioletanditalic">IMPORTANCE_DEFAULT</span>);</p>
+        <p>NotificationManager notificationManager = (NotificationManager) getSystemService(<span class="shouldbevioletanditalic">NOTIFICATION_SERVICE</span>);</p>
+        <p>notificationManager.createNotificationChannel(channel);</p>
+        <p>Notification notification = <span class="shouldbeblue">new</span> Notification.Builder(<span class="shouldbeblue">this</span>, String.valueOf(<span class="shouldbeblue">1</span>))</p>
+        <p>&nbsp;&nbsp;.setSmallIcon(R.drawable.<span class="shouldbevioletanditalic">notification_icon</span>)</p>
+        <p>&nbsp;&nbsp;.setContentTitle(<span class="shouldbegreen">"Sample title"</span>)</p>
+        <p>&nbsp;&nbsp;.setContentText(<span class="shouldbegreen">"Sample text"</span>)</p>
+        <p>&nbsp;&nbsp;.build();</p>
+        <p>notificationManager.notify(<span class="shouldbeblue">1</span>, notification);</p>
+      </div>
+      <br>
+      <p class="codep">For Android 7.1 and below:</p>
+      <div class="maincode">
+        <p>NotificationManager notificationManager = (NotificationManager) getSystemService(<span class="shouldbevioletanditalic">NOTIFICATION_SERVICE</span>);</p>
+        <p>Notification notification = <span class="shouldbeblue">new</span> Notification.Builder(<span class="shouldbeblue">this</span>, String.valueOf(<span class="shouldbeblue">1</span>))</p>
+        <p>&nbsp;&nbsp;.setSmallIcon(R.drawable.<span class="shouldbevioletanditalic">notification_icon</span>)</p>
+        <p>&nbsp;&nbsp;.setContentTitle(<span class="shouldbegreen">"Sample title"</span>)</p>
+        <p>&nbsp;&nbsp;.setContentText(<span class="shouldbegreen">"Sample text"</span>)</p>
+        <p>&nbsp;&nbsp;.build();</p>
+        <p>notificationManager.notify(<span class="shouldbeblue">1</span>, notification);</p>
+      </div>
+      <br>
+      <p class="codep">See preview below:</p>
+      <video height="500" controls>
+        <source src="resources/videos/notificationpreview.webm" type="video/webm">
+      </video>
+    </div>
+    <div class="withlink">
+      <h3>Toast</h3>
+      <div id="Android-Studio_Toast" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_Toast')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p class="maincontent_p1">From the Android Studio documentation:</p>
+      <a href="https://developer.android.com/guide/topics/ui/notifiers/toasts">https://developer.android.com/guide/topics/ui/notifiers/toasts</a>
+      <br>
+      <p>A toast provides simple feedback about an operation in a small popup.</p>
+      <p>It only fills the amount of space required for the message and the current activity remains visible and interactive.</p>
+      <p>Toasts automatically disappear after a timeout.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+        <p>Toast.<span class="shouldbeitalic">makeText</span>(<span class="shouldbeblue">this</span>, <span class="shouldbegreen">&quot;Sample text&quot;</span>, Toast.<span class="shouldbevioletanditalic">LENGTH_SHORT</span>).show();</p>
+      </div>
+      <br>
+      <p class="codep">See preview below:</p>
+      <video height="500" controls>
+        <source src="resources/videos/toastpreview.webm" type="video/webm">
+      </video>
+    </div>
   </body>
   <script>
     function link(linkstr){
