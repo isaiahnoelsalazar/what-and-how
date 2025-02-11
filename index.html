@@ -86,11 +86,23 @@
       .maincode > p > .shouldbeblue {
         color: #0033B3;
       }
+      .maincode > p > .shouldbeotherblue {
+        color: #174ad4;
+      }
       .maincode > p > .shouldbegreen {
         color: #067D17;
       }
       .maincode > p > .shouldbeviolet {
         color: #871094;
+      }
+      .maincode > p > .shouldbegray {
+        color: #777777;
+      }
+      .maincode > p > .shouldbeyellow {
+        color: #9d870d;
+      }
+      .maincode > p > .shouldbebluegreen {
+        color: #00627a;
       }
       .maincode > p > .shouldbevioletanditalic {
         color: #871094;
@@ -113,7 +125,15 @@
       <li><a href="#Android-Studio">Android Studio</a></li>
       <ul>
         <li><a href="#Android-Studio_AlertDialog">AlertDialog</a></li>
+        <li><a href="#Android-Studio_Hiding_A_keyboard">Hiding a keyboard</a></li>
         <li><a href="#Android-Studio_Notification">Notification</a></li>
+        <li><a href="#Android-Studio_OnKeyListener">OnKeyListener</a></li>
+        <li><a href="#Android-Studio_RecyclerView">RecyclerView</a></li>
+        <ul>
+          <li><a href="#Android-Studio_RecyclerView_Adapter">RecyclerView.Adapter</a></li>
+          <li><a href="#Android-Studio_RecyclerView_Holder">RecyclerView.Holder</a></li>
+          <li><a href="#Android-Studio_RecyclerView_Holder_Layout">RecyclerView.Holder Layout</a></li>
+        </ul>
         <li><a href="#Android-Studio_Toast">Toast</a></li>
       </ul>
     </ul>
@@ -151,6 +171,23 @@
       <video height="500" controls>
         <source src="resources/videos/alertdialogpreview.webm" type="video/webm">
       </video>
+    </div>
+    <div class="withlink">
+      <h3>Hiding a keyboard</h3>
+      <div id="Android-Studio_Hiding_A_keyboard" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_Hiding_A_keyboard')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>To hide a currently visible keyboard on the screen programmatically, you can use InputMethodManager.</p>
+      <p>Note that the top-most element in focus should be referenced in order to hide the keyboard from the screen.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+        <p>Button button = findViewById(R.id.<span class="shouldbevioletanditalic">buttonId</span>);</p>
+        <p>InputMethodManager inputMethodManager = (InputMethodManager) <span class="shouldbeblue">this</span>.getSystemService(Context.<span class="shouldbevioletanditalic">INPUT_METHOD_SERVICE</span>);</p>
+        <p>inputMethodManager.hideSoftInputFromWindow(button.getWindowToken(), <span class="shouldbeblue">0</span>);</p>
+      </div>
     </div>
     <div class="withlink">
       <h3>Notification</h3>
@@ -210,6 +247,134 @@
       <video height="500" controls>
         <source src="resources/videos/notificationpreview.webm" type="video/webm">
       </video>
+    </div>
+    <div class="withlink">
+      <h3>OnKeyListener</h3>
+      <div id="Android-Studio_OnKeyListener" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_OnKeyListener')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>An OnKeyListener tells a widget or a view what to do when a key is pressed on the keyboard.</p>
+      <p>This is useful on views which requires a keyboard for interaction such as EditTexts.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+        <p>EditText editText = findViewById(R.id.<span class="shouldbevioletanditalic">editTextId</span>);</p>
+        <p>editText.setOnKeyListener(<span class="shouldbegray">new View.OnKeyListener()</span> {</p>
+        <p>&nbsp;&nbsp;<span class="shouldbeyellow">@Override</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeblue">public boolean</span> <span class="shouldbebluegreen">onKey</span>(View v, <span class="shouldbeblue">int</span> keyCode, KeyEvent event) {</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeblue">if</span> (event.getAction() == KeyEvent.<span class="shouldbevioletanditalic">ACTION_DOWN</span> && keyCode == KeyEvent.<span class="shouldbevioletanditalic">KEYCODE_ENTER</span>){</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbegray">// your code here</span></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+        <p>&nbsp;&nbsp;}</p>
+        <p>}</p>
+      </div>
+    </div>
+    <div class="withlink">
+      <h3>RecyclerView</h3>
+      <div id="Android-Studio_RecyclerView" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_RecyclerView')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p class="maincontent_p1">From the Android Studio documentation:</p>
+      <a href="https://developer.android.com/develop/ui/views/layout/recyclerview">https://developer.android.com/develop/ui/views/layout/recyclerview</a>
+      <br>
+      <p>RecyclerView makes it easy to efficiently display large sets of data.</p>
+      <p>As the name implies, RecyclerView recycles those individual elements.</p>
+      <p>When an item scrolls off the screen, RecyclerView doesn't destroy its view.</p>
+      <p>Instead, RecyclerView reuses the view for new items that have scrolled onscreen.</p>
+      <br>
+      <p>See sample code below:</p>
+      <p class="codep">For simple vertical lists:</p>
+      <div class="maincode">
+        <p>RecyclerView recyclerView = findViewById(R.id.<span class="shouldbevioletanditalic">recyclerViewId</span>);</p>
+        <p>LinearLayoutManager linearLayoutManager = new LinearLayoutManager(<span class="shouldbeblue">this</span>, LinearLayoutManager.<span class="shouldbevioletanditalic">VERTICAL</span>, <span class="shouldbeblue">false</span>);</p>
+        <p>recyclerView.setLayoutManager(linearLayoutManager);</p>
+      </div>
+      <br>
+      <p class="codep">For lists with multiple columns (grids):</p>
+      <div class="maincode">
+        <p>RecyclerView recyclerView = findViewById(R.id.<span class="shouldbevioletanditalic">recyclerViewId</span>);</p>
+        <p>GridLayoutManager gridLayoutManager = new GridLayoutManager(<span class="shouldbeblue">this</span>, <span class="shouldbeblue">3</span>, LinearLayoutManager.<span class="shouldbevioletanditalic">VERTICAL</span>, <span class="shouldbeblue">false</span>);</p>
+        <p>recyclerView.setLayoutManager(gridLayoutManager);</p>
+      </div>
+    </div>
+    <div class="withlink">
+      <h3>RecyclerView.Adapter</h3>
+      <div id="Android-Studio_RecyclerView_Adapter" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_RecyclerView_Adapter')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>A RecyclerView.Adapter tells a RecyclerView what it should do to a given data and layout.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+        <p><span class="shouldbeblue">public class</span> ItemAdapter <span class="shouldbeblue">extends</span> RecyclerView.Adapter<ItemAdapter.ItemHolder> {</p>
+        <p>&nbsp;&nbsp;<span class="shouldbeyellow">@NonNull</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeyellow">@Override</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeblue">public</span> ItemHolder <span class="shouldbebluegreen">onCreateViewHolder</span>(<span class="shouldbeyellow">@NonNull</span> ViewGroup parent, <span class="shouldbeblue">int</span> viewType) {</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;View v = LayoutInflater.<span class="shouldbeitalic">from</span>(parent.getContext()).inflate(R.layout.<span class="shouldbevioletanditalic">item_layout</span>, parent, <span class="shouldbeblue">false</span>);</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeblue">return new</span> ItemHolder(v);</p>
+        <p>&nbsp;&nbsp;}</p>
+        <br>
+        <p>&nbsp;&nbsp;<span class="shouldbeyellow">@Override</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeblue">public void</span> <span class="shouldbebluegreen">onBindViewHolder</span>(<span class="shouldbeyellow">@NonNull</span> ItemHolder holder, <span class="shouldbeblue">int</span> position) {</p>
+        <p>&nbsp;&nbsp;}</p>
+        <br>
+        <p>&nbsp;&nbsp;<span class="shouldbeyellow">@Override</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeblue">public int</span> <span class="shouldbebluegreen">getItemCount</span>() {</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;return 0;</p>
+        <p>&nbsp;&nbsp;}</p>
+        <p>}</p>
+      </div>
+    </div>
+    <div class="withlink">
+      <h3>RecyclerView.Holder</h3>
+      <div id="Android-Studio_RecyclerView_Holder" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_RecyclerView_Holder')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>A RecyclerView.Holder references a layout for a RecyclerView.Adapter.</p>
+      <br>
+      <p>See sample code below:</p>
+      <p class="codep">For simple vertical lists:</p>
+      <div class="maincode">
+        <p><span class="shouldbeblue">class</span> ItemHolder <span class="shouldbeblue">extends</span> RecyclerView.ViewHolder {</p>
+        <p>&nbsp;&nbsp;TextView <span class="shouldbeviolet">t</span>;</p>
+        <p>&nbsp;&nbsp;<span class="shouldbeblue">public</span> <span class="shouldbebluegreen">ItemHolder</span>(<span class="shouldbeyellow">@NonNull</span> View itemView) {</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;super(itemView);</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">t</span> = itemView.findViewById(R.id.<span class="shouldbevioletanditalic">item_textViewId</span>);</p>
+        <p>&nbsp;&nbsp;}</p>
+        <p>}</p>
+      </div>
+    </div>
+    <div class="withlink">
+      <h3>RecyclerView.Holder Layout</h3>
+      <div id="Android-Studio_RecyclerView_Holder_Layout" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_RecyclerView_Holder_Layout')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>A RecyclerView.Holder requires an XML layout for it to use and reference to.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+        <p>&lt;&quest;<span class="shouldbeotherblue">xml version</span><span class="shouldbegreen">="1.0"</span> <span class="shouldbeotherblue">encoding</span><span class="shouldbegreen">="utf-8"</span>&quest;&gt;</p>
+        <p>&lt;<span class="shouldbeblue">LinearLayout</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeotherblue">xmlns</span><span class="shouldbeblue">:</span><span class="shouldbeviolet">android</span><span class="shouldbegreen">="http://schemas.android.com/apk/res/android"</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_width</span><span class="shouldbegreen">="match_parent"</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_height</span><span class="shouldbegreen">="wrap_content"</span>&gt;</p>
+        <p>&nbsp;&nbsp;&lt;<span class="shouldbeblue">TextView</span></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">id</span><span class="shouldbegreen">="@+id/item_textViewId"</span></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_width</span><span class="shouldbegreen">="match_parent"</span></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_height</span><span class="shouldbegreen">="wrap_content"</span></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">padding</span><span class="shouldbegreen">="16dp"</span>/&gt;</p>
+        <p>&lt;/<span class="shouldbeblue">LinearLayout</span>&gt;</p>
+      </div>
     </div>
     <div class="withlink">
       <h3>Toast</h3>
