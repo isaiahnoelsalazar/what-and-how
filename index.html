@@ -125,6 +125,11 @@
       <li><a href="#Android-Studio">Android Studio</a></li>
       <ul>
         <li><a href="#Android-Studio_AlertDialog">AlertDialog</a></li>
+        <li><a href="#Android-Studio_EditText">EditText</a></li>
+        <ul>
+          <li><a href="#Android-Studio_EditText_SetError">Alerting a user through an EditText</a></li>
+        </ul>
+        <li><a href="#Android-Studio_GetText">Getting text from a widget</a></li>
         <li><a href="#Android-Studio_Hiding_A_keyboard">Hiding a keyboard</a></li>
         <li><a href="#Android-Studio_Notification">Notification</a></li>
         <li><a href="#Android-Studio_OnKeyListener">OnKeyListener</a></li>
@@ -135,6 +140,18 @@
           <li><a href="#Android-Studio_RecyclerView_Holder_Layout">RecyclerView.Holder Layout</a></li>
         </ul>
         <li><a href="#Android-Studio_Toast">Toast</a></li>
+        <li><a href="#Android-Studio_Toolbar">Toolbar</a></li>
+        <ul>
+          <li><a href="#Android-Studio_Toolbar_Back">Toolbar with back button</a></li>
+          <li><a href="#Android-Studio_Toolbar_Options">Toolbar with options button</a></li>
+          <ul>
+            <li><a href="#Android-Studio_Toolbar_Options_Layout">Toolbar with options button menu layout</a></li>
+          </ul>
+          <li><a href="#Android-Studio_Toolbar_Menu">Toolbar with navigation menu</a></li>
+          <ul>
+            <li><a href="#Android-Studio_Toolbar_Menu_Layout">Toolbar with navigation menu layout</a></li>
+          </ul>
+        </ul>
       </ul>
     </ul>
     <div class="withlink">
@@ -171,6 +188,67 @@
       <video height="500" controls>
         <source src="resources/videos/alertdialogpreview.webm" type="video/webm">
       </video>
+    </div>
+    <div class="withlink">
+      <h3>EditText</h3>
+      <div id="Android-Studio_EditText" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_EditText')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>An EditText widget provides a user an area for inputting text.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+        <p>&lt;<span class="shouldbeblue">EditText</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">id</span><span class="shouldbegreen">="@+id/editTextId"</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_width</span><span class="shouldbegreen">="match_parent"</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_height</span><span class="shouldbegreen">="wrap_content"</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">hint</span><span class="shouldbegreen">="Type here!"</span>/&gt;</p>
+      </div>
+    </div>
+    <div class="withlink">
+      <h3>Alerting a user through an EditText</h3>
+      <div id="Android-Studio_EditText_SetError" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_EditText_SetError')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>An EditText contains a setError() method to alert a user about anything.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+        <p>EditText editText = findViewById(R.id.<span class="shouldbevioletanditalic">editTextId</span>);</p>
+        <p>editText.setOnKeyListener(<span class="shouldbegray">new View.OnKeyListener()</span> {</p>
+        <p>&nbsp;&nbsp;<span class="shouldbeyellow">@Override</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeblue">public boolean</span> <span class="shouldbebluegreen">onKey</span>(View v, <span class="shouldbeblue">int</span> keyCode, KeyEvent event) {</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeblue">if</span> (<span class="shouldbeviolet">editText</span>.getText().toString().contains(<span class="shouldbegreen">"1"</span>)){</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">editText</span>.setError(<span class="shouldbegreen">"Input contains the number 1!"</span>);</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeblue">return false</span>;</p>
+        <p>&nbsp;&nbsp;}</p>
+        <p>}</p>
+      </div>
+      <br>
+      <p class="codep">See preview below:</p>
+      <video height="500" controls>
+        <source src="resources/videos/edittextseterrorpreview.webm" type="video/webm">
+      </video>
+    </div>
+    <div class="withlink">
+      <h3>Getting text from a widget</h3>
+      <div id="Android-Studio_GetText" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_GetText')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>Getting any text or content from any widget, such as TextViews and EditTexts, is very simple.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+        <p>EditText editText = findViewById(R.id.<span class="shouldbevioletanditalic">editTextId</span>);</p>
+        <p>String text = editText.getText().toString();</p>
+      </div>
     </div>
     <div class="withlink">
       <h3>Hiding a keyboard</h3>
@@ -267,6 +345,7 @@
         <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeblue">if</span> (event.getAction() == KeyEvent.<span class="shouldbevioletanditalic">ACTION_DOWN</span> && keyCode == KeyEvent.<span class="shouldbevioletanditalic">KEYCODE_ENTER</span>){</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbegray">// your code here</span></p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeblue">return false</span>;</p>
         <p>&nbsp;&nbsp;}</p>
         <p>}</p>
       </div>
@@ -399,6 +478,104 @@
       <video height="500" controls>
         <source src="resources/videos/toastpreview.webm" type="video/webm">
       </video>
+    </div>
+    <div class="withlink">
+      <h3>Toolbar</h3>
+      <div id="Android-Studio_Toolbar" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_Toolbar')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>A Toolbar acts as a header for an activity or a whole application.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+        <p>&lt;<span class="shouldbeblue">androidx.appcompat.widget.Toolbar</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeotherblue">xmlns</span><span class="shouldbeblue">:</span><span class="shouldbeviolet">android</span><span class="shouldbegreen">="http://schemas.android.com/apk/res/android"</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeotherblue">xmlns</span><span class="shouldbeblue">:</span><span class="shouldbeviolet">app</span><span class="shouldbegreen">="http://schemas.android.com/apk/res-auto"</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">id</span><span class="shouldbegreen">="@+id/toolbarId"</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_width</span><span class="shouldbegreen">="match_parent"</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_height</span><span class="shouldbegreen">="?attr/actionBarSize"</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">minHeight</span><span class="shouldbegreen">="?attr/actionBarSize"</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">maxHeight</span><span class="shouldbegreen">="?attr/actionBarSize"</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">fitsSystemWindows</span><span class="shouldbegreen">="true"</span></p>
+        <p>&nbsp;&nbsp;<span class="shouldbeviolet">app</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">title</span><span class="shouldbegreen">="Toolbar"</span>/&gt;</p>
+      </div>
+    </div>
+    <div class="withlink">
+      <h3>Toolbar with back button</h3>
+      <div id="Android-Studio_Toolbar_Back" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_Toolbar_Back')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>A back button within a Toolbar allows a user to easily go back without using the navigation bar.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+        <p><span class="shouldbeyellow">@Override</span></p>
+        <p><span class="shouldbeblue">protected void</span> <span class="shouldbebluegreen">onCreate</span>(Bundle savedInstanceState) {</p>
+        <p>&nbsp;&nbsp;<span class="shouldbeblue">super</span>.onCreate(savedInstanceState);</p>
+        <p>&nbsp;&nbsp;setContentView(R.layout.<span class="shouldbevioletanditalic">activity_cart</span>);</p>
+        <br>
+        <p>&nbsp;&nbsp;Toolbar t = findViewById(R.id.<span class="shouldbevioletanditalic">toolbarId</span>);</p>
+        <p>&nbsp;&nbsp;setSupportActionBar(t);</p>
+        <p>&nbsp;&nbsp;getSupportActionBar().setDisplayHomeAsUpEnabled(<span class="shouldbeblue">true</span>);</p>
+        <p>&nbsp;&nbsp;getSupportActionBar().setDisplayShowHomeEnabled(<span class="shouldbeblue">true</span>);</p>
+        <p>}</p>
+        <br>
+        <p><span class="shouldbeyellow">@Override</span></p>
+        <p><span class="shouldbeblue">public boolean</span> <span class="shouldbebluegreen">onOptionsItemSelected</span>(<span class="shouldbeyellow">@NonNull</span> MenuItem item) {</p>
+        <p>&nbsp;&nbsp;<span class="shouldbeblue">if</span> (item.getItemId() == android.R.id.<span class="shouldbevioletanditalic">home</span>){</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;finish();</p>
+        <p>&nbsp;&nbsp;}</p>
+        <p>&nbsp;&nbsp;<span class="shouldbeblue">return super</span>.onOptionsItemSelected(item);</p>
+        <p>}</p>
+      </div>
+    </div>
+    <div class="withlink">
+      <h3>Toolbar with options button</h3>
+      <div id="Android-Studio_Toolbar_Options" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_Toolbar_Options')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>An options button within a Toolbar provides a user multiple choices of program actions to pick from.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+        <p><span class="shouldbeyellow">@Override</span></p>
+        <p><span class="shouldbeblue">public boolean</span> <span class="shouldbebluegreen">onCreateOptionsMenu</span>(Menu menu) {</p>
+        <p>&nbsp;&nbsp;getMenuInflater().inflate(R.menu.<span class="shouldbevioletanditalic">options</span>, menu);</p>
+        <p>&nbsp;&nbsp;<span class="shouldbeblue">return super</span>.onCreateOptionsMenu(menu);</p>
+        <p>}</p>
+        <br>
+        <p><span class="shouldbeyellow">@Override</span></p>
+        <p><span class="shouldbeblue">public boolean</span> <span class="shouldbebluegreen">onOptionsItemSelected</span>(<span class="shouldbeyellow">@NonNull</span> MenuItem item) {</p>
+        <p>&nbsp;&nbsp;<span class="shouldbeblue">if</span> (item.getItemId() == R.id.<span class="shouldbevioletanditalic">option1</span>){</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbegray">// your code here</span></p>
+        <p>&nbsp;&nbsp;}</p>
+        <p>&nbsp;&nbsp;<span class="shouldbeblue">return super</span>.onOptionsItemSelected(item);</p>
+        <p>}</p>
+      </div>
+    </div>
+    <div class="withlink">
+      <h3>Toolbar with options button menu layout</h3>
+      <div id="Android-Studio_Toolbar_Options_Layout" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_Toolbar_Options_Layout')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>An options button for a Toolbar requires a matching menu XML layout.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+        <p>&lt;&quest;<span class="shouldbeotherblue">xml version</span><span class="shouldbegreen">="1.0"</span> <span class="shouldbeotherblue">encoding</span><span class="shouldbegreen">="utf-8"</span>&quest;&gt;</p>
+        <p>&lt;<span class="shouldbeblue">menu</span> <span class="shouldbeotherblue">xmlns</span><span class="shouldbeblue">:</span><span class="shouldbeviolet">android</span><span class="shouldbegreen">="http://schemas.android.com/apk/res/android"</span></p>
+        <p>&nbsp;&nbsp;&lt;<span class="shouldbeblue">item</span> <span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">id</span><span class="shouldbegreen">="@+id/option1"</span></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">title</span><span class="shouldbegreen">="Option 1"</span></p>
+        <p>&lt;/<span class="shouldbeblue">menu</span>&gt;</p>
+      </div>
     </div>
   </body>
   <script>
