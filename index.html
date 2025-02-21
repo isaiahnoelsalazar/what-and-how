@@ -577,6 +577,118 @@
         <p>&lt;/<span class="shouldbeblue">menu</span>&gt;</p>
       </div>
     </div>
+    <div class="withlink">
+      <h3>Toolbar with navigation menu</h3>
+      <div id="Android-Studio_Toolbar_Menu" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_Toolbar_Menu')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>A navigation menu within a Toolbar provides a user a sidebar for additional app options.</p>
+      <p>Note that "R.string.<span style="color: #871094; font-style: italic;">open</span>" is equal to <span style="color: #067D17;">"Open"</span> and "R.string.<span style="color: #871094; font-style: italic;">close</span>" is equal to <span style="color: #067D17;">"Close"</span> in "<strong>res</strong> &gt; <strong>values</strong> &gt; <strong>strings.xml</strong>" at the <span style="color: #00627a;">setupDrawerToggle</span>() function.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+<p>Toolbar <span class="shouldbeviolet">t</span>;</p>
+<p>DrawerLayout <span class="shouldbeviolet">dl</span>;</p>
+<p>NavigationView <span class="shouldbeviolet">nv</span>;</p>
+<p>ActionBarDrawerToggle <span class="shouldbeviolet">abdt</span>;</p>
+<br>
+<p><span class="shouldbeyellow">@Override</span></p>
+<p><span class="shouldbeblue">protected void</span> <span class="shouldbebluegreen">onCreate</span>(Bundle savedInstanceState) {</p>
+<p>&nbsp;&nbsp;<span class="shouldbeblue">super</span>.onCreate(savedInstanceState);</p>
+<p>&nbsp;&nbsp;setContentView(R.layout.activity_main);</p>
+<br>
+<p>&nbsp;&nbsp;Toolbar t = findViewById(R.id.<span class="shouldbevioletanditalic">toolbar</span>);</p>
+<p>&nbsp;&nbsp;<span class="shouldbeviolet">dl</span> = findViewById(R.id.<span class="shouldbevioletanditalic">main</span>);</p>
+<p>&nbsp;&nbsp;<span class="shouldbeviolet">nv</span> = findViewById(R.id.<span class="shouldbevioletanditalic">navigation_view</span>);</p>
+<p>&nbsp;&nbsp;setSupportActionBar(t);</p>
+<p>&nbsp;&nbsp;getSupportActionBar().setDisplayHomeAsUpEnabled(<span class="shouldbeblue">true</span>);</p>
+<br>
+<p>&nbsp;&nbsp;<span class="shouldbeviolet">abdt</span> = setupDrawerToggle();</p>
+<p>&nbsp;&nbsp;<span class="shouldbeviolet">abdt</span>.setDrawerIndicatorEnabled(<span class="shouldbeblue">true</span>);</p>
+<p>&nbsp;&nbsp;<span class="shouldbeviolet">abdt</span>.syncState();</p>
+<p>&nbsp;&nbsp;<span class="shouldbeviolet">dl</span>.addDrawerListener(<span class="shouldbeviolet">abdt</span>);</p>
+<br>
+<p>&nbsp;&nbsp;selectItem(<span class="shouldbeviolet">nv</span>.getMenu().findItem(R.id.<span class="shouldbevioletanditalic">section_products</span>));</p>
+<p>&nbsp;&nbsp;setupDrawer(<span class="shouldbeviolet">nv</span>);</p>
+<br>
+<p>&nbsp;&nbsp;<span class="shouldbeblue">try</span> {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeyellow">@SuppressLint</span>(<span class="shouldbegreen">"RestrictedApi"</span>) NavigationMenuView nmv = (NavigationMenuView) <span class="shouldbeviolet">nv</span>.getChildAt(<span class="shouldbeblue">0</span>);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeblue">if</span> (nmv != <span class="shouldbeblue">null</span>){</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nmv.setVerticalScrollBarEnabled(<span class="shouldbeblue">false</span>);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;} <span class="shouldbeblue">catch</span> (Exception ignored){</p>
+<br>
+<p>&nbsp;&nbsp;}</p>
+<p>}</p>
+<br>
+<p><span class="shouldbeblue">private</span> ActionBarDrawerToggle <span class="shouldbebluegreen">setupDrawerToggle</span>(){</p>
+<p>&nbsp;&nbsp;<span class="shouldbeblue">return new</span> ActionBarDrawerToggle(this, <span class="shouldbeviolet">dl</span>, <span class="shouldbeviolet">t</span>, R.string.<span class="shouldbevioletanditalic">open</span>, R.string.<span class="shouldbevioletanditalic">close</span>);</p>
+<p>}</p>
+<br>
+<p><span class="shouldbeblue">private void</span> <span class="shouldbebluegreen">setupDrawer</span>(NavigationView nv){</p>
+<p>&nbsp;&nbsp;nv.setNavigationItemSelectedListener(item -> {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;selectItem(item);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeblue">return true</span>;</p>
+<p>&nbsp;&nbsp;});</p>
+<p>}</p>
+<br>
+<p><span class="shouldbeblue">private void</span> <span class="shouldbebluegreen">selectItem</span>(MenuItem item){</p>
+<p>&nbsp;&nbsp;if (item.getItemId() == R.id.<span class="shouldbevioletanditalic">option1</span>){</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbegray">// your code here</span></p>
+<p>&nbsp;&nbsp;}</p>
+<br>
+<p>&nbsp;&nbsp;<span class="shouldbeviolet">dl</span>.closeDrawers();</p>
+<p>}</p>
+      </div>
+    </div>
+    <div class="withlink">
+      <h3>Toolbar with navigation menu layout</h3>
+      <div id="Android-Studio_Toolbar_Menu_Layout" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="resources/images/link.png" width="24" height="24" style="cursor: pointer;" onclick="link('https://saiaaaaaaa.github.io/what-and-how/#Android-Studio_Toolbar_Menu_Layout')">
+      </div>
+    </div>
+    <div class="maincontent">
+      <p>A navigation menu for a Toolbar requires a DrawerLayout in the activity's XML layout with a matching menu XML layout.</p>
+      <p>Use the menu XML layout for <a href="#Android-Studio_Toolbar_Options_Layout">Toolbar with options button menu layout</a> as a reference for <span style="color: #067D17;">"@menu/sections"</span>.</p>
+      <br>
+      <p class="codep">See sample code below:</p>
+      <div class="maincode">
+<p>&lt;&quest;<span class="shouldbeotherblue">xml version</span><span class="shouldbegreen">="1.0"</span> <span class="shouldbeotherblue">encoding</span><span class="shouldbegreen">="utf-8"</span>&quest;&gt;</p>
+<p>&lt;<span class="shouldbeblue">androidx.drawerlayout.widget.DrawerLayout</span> </p>
+<p>&nbsp;&nbsp;<span class="shouldbeotherblue">xmlns</span><span class="shouldbeblue">:</span><span class="shouldbeviolet">android</span><span class="shouldbegreen">="http://schemas.android.com/apk/res/android"</span></p>
+<p>&nbsp;&nbsp;<span class="shouldbeotherblue">xmlns</span><span class="shouldbeblue">:</span><span class="shouldbeviolet">app</span><span class="shouldbegreen">="http://schemas.android.com/apk/res-auto"</span></p>
+<p>&nbsp;&nbsp;<span class="shouldbeotherblue">xmlns</span><span class="shouldbeblue">:</span><span class="shouldbeviolet">tools</span><span class="shouldbegreen">="http://schemas.android.com/tools"</span></p>
+<p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">id</span><span class="shouldbegreen">="@+id/main"</span></p>
+<p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_width</span><span class="shouldbegreen">="match_parent"</span></p>
+<p>&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_height</span><span class="shouldbegreen">="match_parent"</span></p>
+<p>&nbsp;&nbsp;<span class="shouldbeviolet">tools</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">context</span><span class="shouldbegreen">=".MainActivity"</span>&gt;</p>
+<p>&nbsp;&nbsp;&lt;<span class="shouldbeblue">LinearLayout</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_width</span><span class="shouldbegreen">="match_parent"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_height</span><span class="shouldbegreen">="match_parent"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">orientation</span><span class="shouldbegreen">="vertical"</span>&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="shouldbeblue">include</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeotherblue">layout</span><span class="shouldbegreen">="@layout/toolbar"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_width</span><span class="shouldbegreen">="match_parent"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_height</span><span class="shouldbegreen">="wrap_content"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">app</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_constraintTop_toTopOf</span><span class="shouldbegreen">="parent"</span> /&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="shouldbeblue">FrameLayout</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">id</span><span class="shouldbegreen">="@+id/fragment_container"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_width</span><span class="shouldbegreen">="match_parent"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_height</span><span class="shouldbegreen">="match_parent"</span>/&gt;</p>
+<p>&nbsp;&nbsp;&lt;/<span class="shouldbeblue">LinearLayout</span>&gt;</p>
+<p>&nbsp;&nbsp;&lt;<span class="shouldbeblue">com.google.android.material.navigation.NavigationView</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">id</span><span class="shouldbegreen">="@+id/navigation_view"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_width</span><span class="shouldbegreen">="wrap_content"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_height</span><span class="shouldbegreen">="match_parent"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">layout_gravity</span><span class="shouldbegreen">="start"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">android</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">overScrollMode</span><span class="shouldbegreen">="never"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">app</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">menu</span><span class="shouldbegreen">="@menu/sections"</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="shouldbeviolet">tools</span><span class="shouldbeblue">:</span><span class="shouldbeotherblue">ignore</span><span class="shouldbegreen">="VisualLintBounds"</span> /&gt;</p>
+<p>&lt;/<span class="shouldbeblue">androidx.drawerlayout.widget.DrawerLayout</span>&gt;</p>
+      </div>
+    </div>
   </body>
   <script>
     function link(linkstr){
